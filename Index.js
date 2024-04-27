@@ -6,8 +6,8 @@ import authRoute from "./Routes/authRoute.js";
 import categoryRoutes from "./Routes/CategoryRoutes.js";
 import productRoute from "./Routes/productRoute.js"
 import cors from "cors";
- import path from "path";
- import { fileURLToPath } from "url";
+import path from "path";
+import { fileURLToPath } from "url";
 
 // rest api
 const app = express();
@@ -26,6 +26,8 @@ const __dirname = path.dirname(__filename);
 app.use(cors());
 app.use(express.json());
 app.use(morgan("dev"));
+
+// use the client app
 app.use(express.static(path.join(__dirname, '/client/build')));
 
 //Routes 
